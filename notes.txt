@@ -1,0 +1,6 @@
+forget password
+send images as messages
+optimize for phone
+hover kakne pe kisne msg kia bataega and see user provide
+on keydown enter 
+group add, remove, leave(for group only)
