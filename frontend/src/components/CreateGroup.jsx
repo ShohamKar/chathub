@@ -15,7 +15,7 @@ const CreateGroup = ({ createChatOpen, toggleCreateChatOpen }) => {
   let [usersSearch, updateUsersSearch] = useState([])
   let [selectedUsers, updateSelectedUsers] = useState([])
   let searchUser = async () => {
-    let { data } = await axios.get(`${server}/users?search=${userNameSearch}&count=4`)
+    let { data } = await axios.get(`${server}/users?search=${userNameSearch}&count=4`, {withCredentials: true})
     updateUsersSearch(data.users)
   }
   let selectUser = ({_id, userName}) => {

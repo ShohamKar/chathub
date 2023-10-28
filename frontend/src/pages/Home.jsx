@@ -28,7 +28,7 @@ const Home = () => {
   let [searchKeyword, updateSearchKeyword] = useState('')
   let [searchResults, updateSearchResults] = useState([])
   let searchUsers = async() => {
-    let {data} = await axios.get(`${server}/users?search=${searchKeyword}`)
+    let {data} = await axios.get(`${server}/users?search=${searchKeyword}`, {withCredentials: true})
     updateSearchResults(data.users)
   }
   useEffect(() => {

@@ -46,7 +46,7 @@ export let createGroup = ({ chatName, users }) => async (dispatch) => {
 
 export let getAllMessages = ({ id }) => async (dispatch) => {
   try {
-    let { data } = await axios.get(`${server}/message/${id}`)
+    let { data } = await axios.get(`${server}/message/${id}`, {withCredentials: true})
     dispatch(setChatMessages(data))
   } catch (error) {
     dispatch(setError(error?.response?.data))

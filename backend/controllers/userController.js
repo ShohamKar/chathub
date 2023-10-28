@@ -51,6 +51,8 @@ export let logout = asyncWrapper(async (req, res, next) => {
   let options = {
     httpOnly: true,
     expires: new Date(Date.now()),
+    secure: true,
+    sameSite: 'none'
   }
   res.status(200).cookie('token', '', options).json({
     success: true,

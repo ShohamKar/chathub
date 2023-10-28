@@ -56,7 +56,7 @@ export let getMyProfile = () => async(dispatch) => {
 export let logout = () => async(dispatch) => {
   try{
     dispatch(setLoadingTrue())
-    let {data} = await axios.post(`${server}/logout`)
+    let {data} = await axios.post(`${server}/logout`, {}, {withCredentials: true})
     dispatch(setLoadingFalse())
     dispatch(setLogout())
   }catch(error){

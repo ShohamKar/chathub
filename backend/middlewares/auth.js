@@ -7,8 +7,10 @@ let authenticate = async (req, res, next) => {
   let options = {
     httpOnly: true,
     expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+    secure: true,
+    sameSite: 'none'
   };
-  if(!token){
+  if (!token) {
     return next(createCustomError('Some error occured', 401))
   }
   let { id } = jwt.verify(token, process.env.JWT_SECRET, options);
